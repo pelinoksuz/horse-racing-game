@@ -1,5 +1,28 @@
 import { createStore } from 'vuex'
 
+const horseNames = [
+  'Şimşek',
+  'Yıldırım',
+  'Rüzgar',
+  'Kıvılcım',
+  'Kahraman',
+  'Karaelmas',
+  'Gümüş',
+  'Alp',
+  'Fırtına',
+  'Parıltı',
+  'Kartal',
+  'Savaşçı',
+  'Kumsal',
+  'Ayaz',
+  'Poyraz',
+  'Şahika',
+  'Efsane',
+  'Kutup',
+  'Gölgem',
+  'Zafer',
+]
+
 export default createStore({
   state: {
     horses: [],
@@ -18,43 +41,45 @@ export default createStore({
   actions: {
     generateProgram({ commit }) {
       const colors = [
-        '#A7F3D0', // soft mint
-        '#99E9C5', // mint green
-        '#7DD3FC', // light blue
-        '#93C5FD', // sky blue
-        '#C7D2FE', // soft indigo
-        '#E9D5FF', // lavender
-        '#FBCFE8', // pink
-        '#F9A8D4', // light rose
-        '#FDE68A', // light yellow
-        '#FEF3C7', // pale cream
-        '#FCD34D', // amber
-        '#FDBA74', // soft orange
-        '#FED7AA', // peach
-        '#BFDBFE', // baby blue
-        '#C4B5FD', // pastel violet
-        '#E0F2F1', // light teal (theme tone)
-        '#D1FAE5', // soft green
-        '#E2E8F0', // neutral gray
-        '#F1F5F9', // light gray-blue
-        '#FAFAF9', // off-white
+        '#A7F3D0',
+        '#99E9C5',
+        '#7DD3FC',
+        '#93C5FD',
+        '#C7D2FE',
+        '#E9D5FF',
+        '#FBCFE8',
+        '#F9A8D4',
+        '#FDE68A',
+        '#FEF3C7',
+        '#FCD34D',
+        '#FDBA74',
+        '#FED7AA',
+        '#BFDBFE',
+        '#C4B5FD',
+        '#E0F2F1',
+        '#D1FAE5',
+        '#E2E8F0',
+        '#F1F5F9',
+        '#FAFAF9',
       ]
 
       const newHorses = []
 
       for (let i = 1; i <= 20; i++) {
-        const color = colors[(i - 1) % colors.length] // renkleri sırayla kullan (görsel uyum sağlar)
+        const randomName = horseNames[Math.floor(Math.random() * horseNames.length)]
+        const color = colors[(i - 1) % colors.length]
 
         newHorses.push({
           id: i,
-          name: `Horse ${i}`,
-          condition: Math.floor(Math.random() * 60) + 40, // 40–100 arası kondisyon
+          name: randomName,
+          condition: Math.floor(Math.random() * 100) + 1, // 1–100 condition score range
           color,
         })
       }
 
       commit('SET_HORSES', newHorses)
     },
+
     toggleRace({ commit }) {
       commit('TOGGLE_RACE')
     },
