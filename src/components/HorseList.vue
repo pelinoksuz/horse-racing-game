@@ -9,11 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="horse in horses"
-          :key="horse.id"
-          :style="{ backgroundColor: horse.color, color: getTextColor(horse.color) }"
-        >
+        <tr v-for="horse in horses" :key="horse.id" :style="{ backgroundColor: horse.color }">
           <td>{{ horse.name }}</td>
           <td>{{ horse.condition }}</td>
         </tr>
@@ -26,30 +22,24 @@
 defineProps({
   horses: Array,
 })
-
-const getTextColor = (bgColor) => {
-  const darkColors = ['red', 'blue', 'green', 'purple', 'brown']
-  return darkColors.includes(bgColor.toLowerCase()) ? 'white' : 'black'
-}
 </script>
 
 <style scoped>
 .horse-list {
   background: var(--color-primary);
-  border-right: 2px solid var(--color-border);
-  border-radius: 6px;
-  padding: 12px;
-  box-shadow: 0 2px 6px rgba(26, 34, 56, 0.15);
+  border-right: 4px solid var(--color-border);
+  border-radius: 8px;
+  padding: 16px;
 }
 
 .horse-list h3 {
   color: var(--color-secondary);
   background: rgba(15, 118, 110, 0.1);
-  border-left: 5px solid var(--color-accent);
-  padding: 8px 10px;
+  border-left: 8px solid var(--color-accent);
+  padding: 8px 16px;
   border-radius: 4px;
   font-weight: 600;
-  padding: 10px;
+  padding: 8px;
   width: 220px;
 }
 
@@ -61,18 +51,17 @@ table {
 th {
   background: var(--color-secondary);
   color: var(--color-text-light);
-  padding: 8px;
+  font-size: 16px;
 }
 
 td {
-  padding: 8px;
-  border-bottom: 1px solid var(--color-border);
+  font-size: 12px;
 }
+
 th,
 td {
-  padding: 5px;
-  border: 1px solid #ccc;
-  font-size: 13px;
+  padding: 4px;
+  border: 4px solid var(--vt-c-divider-light-2);
   text-align: left;
 }
 
