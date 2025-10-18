@@ -19,13 +19,13 @@ const toggleRace = () => {
 }
 
 const startAllRaces = async () => {
-  currentRace.value = 0 // yarış sıfırdan başlasın
+  currentRace.value = 0
 
   for (let i = 0; i < store.getters.totalRaces; i++) {
     currentRace.value = i + 1
 
     await runSingleRace(store.getters.raceDistances[i])
-    await new Promise((resolve) => setTimeout(resolve, 2000)) // 🕒 2sn ara
+    await new Promise((resolve) => setTimeout(resolve, 2000))
   }
 
 }
@@ -33,7 +33,7 @@ const startAllRaces = async () => {
 
 const runSingleRace = (distance) => {
   return new Promise((resolve) => {
-    store.commit('TOGGLE_RACE') // başlat
+    store.commit('TOGGLE_RACE')
     const unsubscribe = store.subscribe((mutation, state) => {
       if (mutation.type === 'SET_RACE_RESULTS') {
         resolve()
