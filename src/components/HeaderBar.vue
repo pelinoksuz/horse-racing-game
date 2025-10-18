@@ -19,22 +19,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
+  padding: 16px 24px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 3px 8px rgba(26, 34, 56, 0.4);
+  box-shadow: 0 4px 8px var(--vt-c-divider-light-2);
 }
 
 .controls button {
+  margin-right: 8px;
   background: var(--color-accent);
   color: var(--color-text-light);
   border: none;
-  border-radius: 6px;
-  padding: 8px 14px;
+  border-radius: 8px;
+  padding: 8px 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .controls button:hover {
