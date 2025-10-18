@@ -114,13 +114,14 @@ onUnmounted(stopRace)
   font-size: 32px;
   transform: scaleX(-1);
   transition: left 0.2s linear;
+  margin-left: 44px;
 }
 
 .horse-name {
   font-size: 16px;
   font-weight: 600;
   color: #33333383;
-  margin-left: 80px; 
+  margin-left: 80px;
 }
 
 .empty {

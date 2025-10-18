@@ -19,20 +19,17 @@ const toggleRace = () => {
 }
 
 const startAllRaces = async () => {
-  store.commit('RESET_RACE')
-  store.dispatch('generateProgram')
-  currentRace.value = 0
+  currentRace.value = 0 // yarış sıfırdan başlasın
 
   for (let i = 0; i < store.getters.totalRaces; i++) {
     currentRace.value = i + 1
-    console.log(`🏇 Starting Race ${currentRace.value} (${store.getters.raceDistances[i]}m)`)
 
     await runSingleRace(store.getters.raceDistances[i])
     await new Promise((resolve) => setTimeout(resolve, 2000)) // 🕒 2sn ara
   }
 
-  console.log('🏁 All races completed!')
 }
+
 
 const runSingleRace = (distance) => {
   return new Promise((resolve) => {
