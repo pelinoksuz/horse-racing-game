@@ -64,7 +64,7 @@ const allResults = computed(() => store.getters.allResults)
     <main class="main-content">
       <HorseList :horses="horses" />
       <RaceTrack :raceHorses="raceHorses" :running="raceRunning" @finish="onFinish" />
-      <RaceInfo :results="allResults" />
+      <RaceInfo :raceHorses="raceHorses" :results="allResults" />
     </main>
   </div>
 </template>
