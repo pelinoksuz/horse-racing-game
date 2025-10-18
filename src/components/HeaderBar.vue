@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-// Şimdilik event emit ediliyor
 </script>
 
 <style>

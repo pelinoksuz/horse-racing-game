@@ -1,40 +1,46 @@
 import { createStore } from 'vuex'
 
-const horseNames = [
-  'Şimşek',
-  'Yıldırım',
-  'Rüzgar',
-  'Kıvılcım',
-  'Kahraman',
-  'Karaelmas',
-  'Gümüş',
-  'Alp',
-  'Fırtına',
-  'Parıltı',
-  'Kartal',
-  'Savaşçı',
-  'Kumsal',
-  'Ayaz',
-  'Poyraz',
-  'Şahika',
-  'Efsane',
-  'Kutup',
-  'Gölgem',
-  'Zafer',
-]
-
 export default createStore({
   state: {
     horses: [],
+    raceHorses: [],
     raceRunning: false,
+    raceResults: [],
+    allResults: [],
+    raceCount: 0,
+    totalRaces: 6,
+    raceDistances: [1200, 1400, 1400, 1600, 1800, 2000],
   },
 
   mutations: {
     SET_HORSES(state, horses) {
       state.horses = horses
     },
+    SET_RACE_HORSES(state, raceHorses) {
+      state.raceHorses = raceHorses
+    },
     TOGGLE_RACE(state) {
       state.raceRunning = !state.raceRunning
+    },
+    RESET_RACE(state) {
+      state.raceHorses = []
+      state.raceResults = []
+      state.raceRunning = false
+      state.raceCount = 0
+      state.allResults = []
+    },
+    SET_RACE_RESULTS(state, results) {
+      state.raceResults = results
+      state.raceCount += 1
+      results.forEach((horse, index) => {
+        state.allResults.push({
+          race: state.raceCount,
+          distance: state.raceDistances[state.raceCount - 1],
+          position: index + 1,
+          name: horse.name,
+          id: horse.id,
+        })
+      })
     },
   },
 
@@ -63,30 +69,54 @@ export default createStore({
         '#FAFAF9',
       ]
 
-      const newHorses = []
+      const horseNames = [
+        'Şimşek',
+        'Yıldırım',
+        'Rüzgar',
+        'Kıvılcım',
+        'Kahraman',
+        'Karaelmas',
+        'Gümüş',
+        'Alp',
+        'Fırtına',
+        'Parıltı',
+        'Kartal',
+        'Savaşçı',
+        'Kumsal',
+        'Ayaz',
+        'Poyraz',
+        'Şahika',
+        'Efsane',
+        'Kutup',
+        'Gölgem',
+        'Zafer',
+      ]
 
-      for (let i = 1; i <= 20; i++) {
-        const randomName = horseNames[Math.floor(Math.random() * horseNames.length)]
-        const color = colors[(i - 1) % colors.length]
-
-        newHorses.push({
-          id: i,
-          name: randomName,
-          condition: Math.floor(Math.random() * 100) + 1, // 1–100 condition score range
-          color,
+      const horses = []
+      for (let i = 0; i < 20; i++) {
+        horses.push({
+          id: i + 1,
+          name: horseNames[i],
+          condition: Math.floor(Math.random() * 60) + 40,
+          color: colors[i % colors.length],
         })
       }
 
-      commit('SET_HORSES', newHorses)
-    },
+      const raceHorses = [...horses].sort(() => 0.5 - Math.random()).slice(0, 10)
 
-    toggleRace({ commit }) {
-      commit('TOGGLE_RACE')
+      commit('SET_HORSES', horses)
+      commit('SET_RACE_HORSES', raceHorses)
     },
   },
 
   getters: {
     horses: (state) => state.horses,
+    raceHorses: (state) => state.raceHorses,
     raceRunning: (state) => state.raceRunning,
+    raceResults: (state) => state.raceResults,
+    allResults: (state) => state.allResults,
+    raceCount: (state) => state.raceCount,
+    totalRaces: (state) => state.totalRaces,
+    raceDistances: (state) => state.raceDistances,
   },
 })
