@@ -32,6 +32,7 @@ export default createStore({
     SET_RACE_RESULTS(state, results) {
       state.raceResults = results
       state.raceCount += 1
+      state.raceRunning = false
       results.forEach((horse, index) => {
         state.allResults.push({
           race: state.raceCount,

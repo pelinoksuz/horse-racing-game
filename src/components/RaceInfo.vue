@@ -40,7 +40,7 @@
             <td>{{ result.distance }} m</td>
             <td>{{ result.position }}</td>
             <td :class="{ winner: result.position === 1 }">
-              {{ result.position === 1 ? '🏆 ' : '' }}{{ result.name }}
+              {{ result.position === 1 ? '1. ' : '' }}{{ result.name }}
             </td>
           </tr>
 

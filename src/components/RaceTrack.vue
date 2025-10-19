@@ -9,7 +9,9 @@
       >
         <div class="lane-number">{{ index + 1 }}</div>
         <div class="horse-section">
-          <i class="horse-icon" :style="{ left: horsePositions[index] + '%', color: horse.color }"
+          <i
+            class="horse-icon"
+            :style="{ left: Math.min(horsePositions[index], 90) + '%', color: horse.color }"
             >🐎</i
           >
           <h3 class="horse-name">{{ horse.name }}</h3>
@@ -55,9 +57,9 @@ function startRace() {
   raceInterval = setInterval(() => {
     horsePositions.value = horsePositions.value.map((pos, i) => {
       const speed = Math.random() * 2 + 0.5
-      const newPos = Math.min(pos + speed, 100)
+      const newPos = Math.min(pos + speed, 90)
 
-      if (newPos >= 100 && !finishedHorses.value.includes(props.raceHorses[i])) {
+      if (newPos >= 90 && !finishedHorses.value.includes(props.raceHorses[i])) {
         finishedHorses.value.push(props.raceHorses[i])
 
         if (finishedHorses.value.length === props.raceHorses.length) {
