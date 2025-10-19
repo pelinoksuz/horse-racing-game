@@ -92,7 +92,7 @@ defineProps({
   background: var(--color-secondary);
   color: var(--color-text-light);
   border-bottom: 2px solid var(--color-accent);
-  z-index: 2;
+  z-index: 3;
   padding: 8px;
   font-weight: 600;
 }
@@ -125,9 +125,6 @@ defineProps({
   margin: 0;
   padding: 8px;
   border-radius: 4px 4px 0 0;
-  position: sticky;
-  top: 0;
-  z-index: 3;
 }
 
 /* Scrollbar tasarımı */
