@@ -1,6 +1,6 @@
 # 🏇 Horse Racing Simulation
 
-[Live Demo Hosted on Vercel](https://vercel.com/pelin-oksuzs-projects/horse-racing-game)  
+[Live Demo Hosted on Vercel](https://horse-racing-game-eta.vercel.app/)  
 
 > An interactive **Vue.js horse racing simulator** built with Vuex, component-based architecture, and real-time motion logic — designed as a **frontend case study** to demonstrate clean state management, UI synchronization, and scalability.
 
@@ -28,7 +28,7 @@ Each race randomly selects 10 horses from a generated pool, animates them with v
 | 🏁 **Multi-Race Simulation**    | Runs 6 consecutive races (1200m → 2000m) with different lengths             |
 | ⚡ **Real-Time Animations**      | Smooth CSS transitions simulate horse movement across the track             |
 | 🧠 **Vuex State Management**    | Centralized control of horses, races, and results                           |
-| 📊 **Interactive Tables**       | Live-updating “Program” and “Results” panels with sticky headers            |
+| 📊 **Interactive Tables**       | Live-updating “Program” and “Results” panels                                |
 | 🎨 **Polished UI**              | Clean color scheme, responsive layout, and scrollable results section       |
 
 ---
@@ -80,28 +80,6 @@ npm run dev
 # 5️⃣ Open the app in browser
 http://localhost:5173/
 ```
-
----
-
-## 🧠 Highlights
-
-* Built with **Composition API** for cleaner reactivity handling
-* Implemented **multi-stage race logic** using Promises and Vuex mutations
-* Designed with **10–30–60 color rule** for visual hierarchy and accessibility
-* Used **CSS transitions** for lightweight animation instead of JS libraries
-* Structured for scalability — easily extendable with leaderboards or multiplayer modes
-
----
-
-## 💡 Future Improvements
-
-* [ ] Add **leaderboard and point ranking system**
-* [ ] Implement **restart / replay** functionality
-* [ ] Add **sound and cheering effects** for immersion
-* [ ] Create **chart visualizations** for performance tracking
-* [ ] Write **unit tests** using Vitest and Vue Test Utils
-
----
 
 ## 👩‍💻 About the Developer
 
