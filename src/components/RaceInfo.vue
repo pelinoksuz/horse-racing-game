@@ -71,6 +71,7 @@ defineProps({
   width: 24%;
   background: var(--color-primary);
   border-left: 2px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
   padding: 8px;
   display: flex;
   flex-direction: column;

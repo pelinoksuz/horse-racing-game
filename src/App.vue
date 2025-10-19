@@ -27,9 +27,7 @@ const startAllRaces = async () => {
     await runSingleRace(store.getters.raceDistances[i])
     await new Promise((resolve) => setTimeout(resolve, 2000))
   }
-
 }
-
 
 const runSingleRace = (distance) => {
   return new Promise((resolve) => {
@@ -71,6 +69,10 @@ const allResults = computed(() => store.getters.allResults)
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--color-primary);
+  overflow: auto;
+  min-height: 100vh;
+  min-width: 100%;
 }
 .main-content {
   display: flex;

@@ -1,27 +1,29 @@
 <template>
   <section class="race-track">
-    <div
-      v-for="(horse, index) in raceHorses"
-      :key="index"
-      class="lane"
-      :style="{ backgroundColor: horse.color }"
-    >
-      <div class="lane-number">{{ index + 1 }}</div>
-      <div class="horse-section">
-        <i class="horse-icon" :style="{ left: horsePositions[index] + '%', color: horse.color }"
-          >🐎</i
-        >
-
-        <h3 class="horse-name">{{ horse.name }}</h3>
+    <div class="race-track-pist">
+      <div
+        v-for="(horse, index) in raceHorses"
+        :key="index"
+        class="lane"
+        :style="{ backgroundColor: horse.color }"
+      >
+        <div class="lane-number">{{ index + 1 }}</div>
+        <div class="horse-section">
+          <i class="horse-icon" :style="{ left: horsePositions[index] + '%', color: horse.color }"
+            >🐎</i
+          >
+          <h3 class="horse-name">{{ horse.name }}</h3>
+        </div>
       </div>
-    </div>
 
-    <!-- Boş satırlar (henüz generate edilmediyse) -->
-    <div v-for="n in 10 - raceHorses.length" :key="'empty-' + n" class="lane empty">
-      <div class="lane-number">{{ raceHorses.length + n }}</div>
-    </div>
+      <!-- Boş satırlar -->
+      <div v-for="n in 10 - raceHorses.length" :key="'empty-' + n" class="lane empty">
+        <div class="lane-number">{{ raceHorses.length + n }}</div>
+      </div>
 
-    <div class="finish-line">FINISH</div>
+      <!-- 🏁 Finish Line -->
+      <div class="finish-line">FINISH</div>
+    </div>
   </section>
 </template>
 
@@ -83,7 +85,13 @@ onUnmounted(stopRace)
   background: linear-gradient(90deg, #e0f2f1 0%, #cce8e6 100%);
   border-left: 4px solid var(--color-accent);
   border-right: 4px solid var(--color-accent);
+
   border-radius: 8px;
+  padding: 16px;
+}
+.race-track-pist {
+  position: relative;
+  height: calc(var(--lane-height) * v-bind('raceHorses.length'));
 }
 
 .lane {

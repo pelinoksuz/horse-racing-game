@@ -27,15 +27,15 @@ defineProps({
 <style scoped>
 .horse-list {
   background: var(--color-primary);
-  border-right: 4px solid var(--color-border);
   border-radius: 8px;
   padding: 16px;
+  margin-left: 44px;
 }
 
 .horse-list h3 {
   color: var(--color-secondary);
   background: rgba(15, 118, 110, 0.1);
-  border-left: 8px solid var(--color-accent);
+  border-left: 4px solid var(--color-accent);
   padding: 8px 16px;
   border-radius: 4px;
   font-weight: 600;
@@ -55,7 +55,7 @@ th {
 }
 
 td {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--vt-c-text-light-1);
 }
 
