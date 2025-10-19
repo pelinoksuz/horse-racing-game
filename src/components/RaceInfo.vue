@@ -80,14 +80,12 @@ defineProps({
   overflow: hidden;
 }
 
-/* Tablo genel yapısı */
 .race-info table {
   width: 100%;
   border-collapse: collapse;
   border-radius: 8px;
 }
 
-/* Sticky başlık */
 .race-info thead th {
   position: sticky;
   top: 0;
@@ -99,29 +97,27 @@ defineProps({
   font-weight: 600;
 }
 
-/* Scroll için kap */
 .results {
   flex: 1;
-  max-height: 380px; /* tablo yüksekliği */
+  max-height: 380px;
   overflow-y: auto;
   border: 1px solid var(--color-border);
   border-radius: 6px;
 }
 
-/* Satır stilleri */
 .race-info td {
   border: 1px solid var(--color-border);
   padding: 6px;
   text-align: center;
   font-size: 14px;
   background: #ffffffa1;
+  color: var(--vt-c-text-light-1);
 }
 
 .race-info tbody tr:nth-child(even) {
   background-color: rgba(15, 118, 110, 0.08);
 }
 
-/* Başlık alanı */
 .results h3 {
   background-color: var(--color-secondary);
   border-bottom: 2px solid var(--color-accent);

@@ -56,6 +56,7 @@ th {
 
 td {
   font-size: 12px;
+  color: var(--vt-c-text-light-1);
 }
 
 th,
