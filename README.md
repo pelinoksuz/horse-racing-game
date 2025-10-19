@@ -1,69 +1,112 @@
-# .
+# 🏇 Horse Racing Simulation
 
-This template should help get you started developing with Vue 3 in Vite.
+[Live Demo Hosted on Vercel](https://vercel.com/pelin-oksuzs-projects/horse-racing-game)  
 
-## Recommended IDE Setup
+> An interactive **Vue.js horse racing simulator** built with Vuex, component-based architecture, and real-time motion logic — designed as a **frontend case study** to demonstrate clean state management, UI synchronization, and scalability.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## 🎯 Overview
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+This project was developed as a **frontend coding challenge**, focused on implementing:
 
-## Customize configuration
+* **Reactive UI updates** with Vue 3 Composition API
+* **Global state management** using Vuex
+* **Sequential animations** and controlled event loops
+* **Component reusability** and modular layout design
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+The application simulates **6 consecutive horse races** (1200m–2000m).
+Each race randomly selects 10 horses from a generated pool, animates them with variable speeds, and records detailed race results.
 
-## Project Setup
+---
 
-```sh
+## 🧩 Key Features
+
+| Feature                         | Description                                                                 |
+| ------------------------------- | --------------------------------------------------------------------------- |
+| 🐎 **Dynamic Horse Generation** | Automatically generates 20 horses with unique names, colors, and conditions |
+| 🏁 **Multi-Race Simulation**    | Runs 6 consecutive races (1200m → 2000m) with different lengths             |
+| ⚡ **Real-Time Animations**      | Smooth CSS transitions simulate horse movement across the track             |
+| 🧠 **Vuex State Management**    | Centralized control of horses, races, and results                           |
+| 📊 **Interactive Tables**       | Live-updating “Program” and “Results” panels with sticky headers            |
+| 🎨 **Polished UI**              | Clean color scheme, responsive layout, and scrollable results section       |
+
+---
+
+## 🏗️ Architecture
+
+```
+src/
+ ├── components/
+ │   ├── HeaderBar.vue      # Controls (Generate, Start/Pause)
+ │   ├── HorseList.vue      # Generated horses overview
+ │   ├── RaceTrack.vue      # Animated racing lanes
+ │   └── RaceInfo.vue       # Live program and race results
+ ├── store/
+ │   └── index.js           # Vuex store with actions & mutations
+ ├── App.vue                # Main layout
+ └── main.js                # Entry point
+```
+
+---
+
+## ⚙️ Tech Stack
+
+| Category             | Tool                                        |
+| -------------------- | ------------------------------------------- |
+| **Framework**        | Vue 3 (Composition API)                     |
+| **State Management** | Vuex 4                                      |
+| **Build Tool**       | Vite                                        |
+| **Styling**          | Scoped CSS, Flexbox, Transitions            |
+| **Architecture**     | Component-Based Design (modular + scalable) |
+
+---
+
+## 🚀 Setup & Run
+
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/pelinoksuz/horse-racing-simulation.git
+
+# 2️⃣ Navigate into the project folder
+cd horse-racing-simulation
+
+# 3️⃣ Install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# 4️⃣ Start the dev server
 npm run dev
+
+# 5️⃣ Open the app in browser
+http://localhost:5173/
 ```
 
-### Compile and Minify for Production
+---
 
-```sh
-npm run build
-```
+## 🧠 Highlights
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+* Built with **Composition API** for cleaner reactivity handling
+* Implemented **multi-stage race logic** using Promises and Vuex mutations
+* Designed with **10–30–60 color rule** for visual hierarchy and accessibility
+* Used **CSS transitions** for lightweight animation instead of JS libraries
+* Structured for scalability — easily extendable with leaderboards or multiplayer modes
 
-```sh
-npm run test:unit
-```
+---
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+## 💡 Future Improvements
 
-```sh
-# Install browsers for the first run
-npx playwright install
+* [ ] Add **leaderboard and point ranking system**
+* [ ] Implement **restart / replay** functionality
+* [ ] Add **sound and cheering effects** for immersion
+* [ ] Create **chart visualizations** for performance tracking
+* [ ] Write **unit tests** using Vitest and Vue Test Utils
 
-# When testing on CI, must build the project first
-npm run build
+---
 
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
+## 👩‍💻 About the Developer
 
-### Lint with [ESLint](https://eslint.org/)
+Developed by **[Pelin Öksüz](https://github.com/pelinoksuz)**
+Frontend Engineer specializing in **Angular, Vue, RxJS**, and **real-time data visualization**.
+Passionate about building scalable, performant, and user-friendly web applications.
 
-```sh
-npm run lint
-```
+---
