@@ -1,6 +1,6 @@
 # 🏇 Horse Racing Simulation
 
-[Live Demo Hosted on Vercel](https://vercel.com/pelin-oksuzs-projects/horse-racing-game)  
+[Live Demo Hosted on Vercel](https://horse-racing-game-eta.vercel.app/)  
 
 > An interactive **Vue.js horse racing simulator** built with Vuex, component-based architecture, and real-time motion logic — designed as a **frontend case study** to demonstrate clean state management, UI synchronization, and scalability.
 
