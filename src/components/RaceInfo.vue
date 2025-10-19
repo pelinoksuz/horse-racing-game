@@ -1,7 +1,6 @@
 <template>
   <aside class="race-info">
     <div class="program">
-      <h3>Program</h3>
       <table>
         <thead>
           <tr>
@@ -69,13 +68,13 @@ defineProps({
 
 <style scoped>
 .race-info {
-  width: 25%;
+  width: 24%;
   background: var(--color-primary);
   border-left: 2px solid var(--color-border);
-  padding: 10px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -101,13 +100,13 @@ defineProps({
   flex: 1;
   max-height: 380px;
   overflow-y: auto;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
 }
 
 .race-info td {
   border: 1px solid var(--color-border);
-  padding: 6px;
+  padding: 8px;
   text-align: center;
   font-size: 14px;
   background: #ffffffa1;
